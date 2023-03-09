@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Product-1</h5>
+                        <h6 class="card-subtitle text-muted">Milk Products</h6>
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                        <button class="btn btn-danger" onclick="p1()">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Product-2</h5>
+                        <h6 class="card-subtitle text-muted">sugar Products</h6>
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                        <button class="btn btn-danger" onclick="p2()">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Product-3</h5>
+                        <h6 class="card-subtitle text-muted">Cosmetics Products</h6>
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                        <button class="btn btn-danger" onclick="p3()">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Product-4</h5>
+                        <h6 class="card-subtitle text-muted">Coke Products</h6>
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                        <button class="btn btn-danger" onclick="p3()">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-dark " onclick="c()">Cart Summary</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var arr=[];
+        function p1(){
+            let x= document.getElementsByTagName('h5')[0].innerHTML;
+            let y= document.getElementsByTagName('h6')[0].innerHTML;
+            let z= document.getElementsByTagName('p')[0].innerHTML;
+
+
+
+            arr.push(x,y,z)
+
+            localStorage.setItem("arr",JSON.stringify(arr))
+            // console.log(arr)
+        }
+        function p2(){
+            let x= document.getElementsByTagName('h5')[1].innerHTML;
+            let y= document.getElementsByTagName('h6')[1].innerHTML;
+            let z= document.getElementsByTagName('p')[1].innerHTML;
+    
+            arr.push(x,y,z)
+            localStorage.setItem("arr",JSON.stringify(arr));
+      
+        }
+        function p3(){
+            let x = document.getElementsByTagName('h5')[2].innerHTML;
+            let y = document.getElementsByTagName('h6')[2].innerHTML;
+            let z = document.getElementsByTagName('p')[2].innerHTML;
+            arr.push(x,y,z);
+            localStorage.setItem("arr",JSON.stringify(arr));
+        }
+        
+        function c(){
+            
+            var t = localStorage.getItem("arr")
+            console.log(t)
+            localStorage.clear();
+        }
+        
+
+
+    </script>
+    
+</body>
+</html>

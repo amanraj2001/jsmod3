@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="dat">enter date</label>
+        <input type="text" id="dat">
+    </div>
+    <div>
+        <button type="button" onclick="abc()">check</button>
+    </div>
+    <p id="demo"></p>
+
+    <script>
+        function abc(){
+            date = dat.value;
+            var date = date.split("-");
+            var month = parseInt(date[0])
+            var day = parseInt(date[1])
+            var year = parseInt(date[2])
+            console.log(month);
+
+            if(date[0].length!=2 || date[1].length!=2 || date[2].length!=4){
+                alert("error")
+            }
+            
+        }
+    </script>
+</body>
+</html>
